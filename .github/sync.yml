@@ -1,0 +1,16 @@
+group:
+  - repos: |
+      purelyfortesting/dest
+    files:
+      - text.txt
+      - source: templates/child.txt
+        dest: root.txt
+        template:
+          a:
+            b:
+              c: 'val'
+      - source: templates/child.txt
+        dest: templates/garbage.txt
+        template: true
+      - source: templates/
+        template: true

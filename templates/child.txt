@@ -1,0 +1,6 @@
+{% extends './parent.txt' %}
+
+{% block sect %}
+  This is the overwritten
+  'sect' block. {{ a.b.c }}
+{% endblock %}

@@ -1,0 +1,4 @@
+This is a parent text template.
+{% block sect %}
+This is default text for the 'sect' section.
+{% endblock %}
