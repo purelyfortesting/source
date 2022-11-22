@@ -19,7 +19,7 @@
       entry: bash -c 'if [ ! -f "$(dirname "$dir")"/src/locales/ar.json ]; then pnpm i18n; fi'
       language: system
       pass_filenames: false
-{% endfilter %}
+{%- endfilter %}
 
 {% endblock %}
 
@@ -41,7 +41,7 @@
       pass_filenames: false
       stages:
         - push
-{% endfilter %}
+{%- endfilter %}
 {% endblock %}
 
 {# Dependencies must be indented by 10 spaces. #}
