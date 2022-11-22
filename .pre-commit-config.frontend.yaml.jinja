@@ -23,6 +23,8 @@
 
 {% endblock %}
 
+{% block repos_bottom %}
+
 {% filter indent(2, true) %}
 - repo: local # More local hooks are defined at the top.
   hooks:
@@ -71,5 +73,3 @@
 - typescript@4.6.2
 {% endfilter %}
 {% endblock %}
-
-{% block repos_bottom %}
