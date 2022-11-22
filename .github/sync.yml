@@ -1,10 +1,14 @@
 group:
   - repos: |
+      purelyfortesting/source
       purelyfortesting/dest
     files:
       - source: .pre-commit-config.yaml.jinja
         dest: .pre-commit-config.yaml
         template: true
+  - repos: |
+      purelyfortesting/dest
+    files:
       - source: .pre-commit-config.frontend.yaml.jinja
         dest: .pre-commit-config.frontend.yaml
         template: true
