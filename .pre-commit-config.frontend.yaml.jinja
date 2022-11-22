@@ -6,7 +6,11 @@
 # https://github.com/WordPress/openverse/blob/main/.pre-commit-config.frontend.yaml.jinja
 {% endblock %}
 
-{# Blocks must be indented by 2 spaces. #}
+{# TODO: `|safe` filters can be removed after https://github.com/BetaHuhn/repo-file-sync-action/issues/278 #}
+
+{#==================================
+Blocks must be indented by 2 spaces.
+==================================#}
 
 {% set repos_top_content %}
   - repo: local # More local hooks are defined at the bottom.
@@ -50,37 +54,38 @@
 {{ repos_bottom_content }}
 {% endblock %}
 
-{# Dependencies must be indented by 10 spaces. #}
+{#=========================================
+Dependencies must be indented by 10 spaces.
+=========================================#}
 
 {% set eslint_dependencies_content %}
-- '@babel/eslint-parser@7.17.0'
-- '@intlify/eslint-plugin-vue-i18n@1.4.0'
-- '@nuxtjs/eslint-module@3.1.0'
-- '@typescript-eslint/eslint-plugin@5.23.0'
-- '@typescript-eslint/parser@5.23.0'
-- eslint@8.15.0
-- eslint-config-prettier@8.5.0
-- eslint-import-resolver-custom-alias@1.3.0
-- eslint-plugin-eslint-comments@3.2.0
-- eslint-plugin-import@2.26.0
-- eslint-plugin-prettier@4.0.0
-- eslint-plugin-tsdoc@0.2.16
-- eslint-plugin-unicorn@42.0.0
-- eslint-plugin-vue@9.4.0
-- eslint-plugin-vuejs-accessibility@1.1.1
+{{ super() }}
+          - '@babel/eslint-parser@7.17.0'
+          - '@intlify/eslint-plugin-vue-i18n@1.4.0'
+          - '@nuxtjs/eslint-module@3.1.0'
+          - '@typescript-eslint/eslint-plugin@5.23.0'
+          - '@typescript-eslint/parser@5.23.0'
+          - eslint-import-resolver-custom-alias@1.3.0
+          - eslint-plugin-eslint-comments@3.2.0
+          - eslint-plugin-import@2.26.0
+          - eslint-plugin-prettier@4.0.0
+          - eslint-plugin-tsdoc@0.2.16
+          - eslint-plugin-unicorn@42.0.0
+          - eslint-plugin-vue@9.4.0
+          - eslint-plugin-vuejs-accessibility@1.1.1
 {%- endset %}
-{% set eslint_dependencies_content = eslint_dependencies_content|indent(10, true)|safe %}
+{% set eslint_dependencies_content = eslint_dependencies_content|safe %}
 
 {% block eslint_dependencies %}
 {{ eslint_dependencies_content }}
 {% endblock %}
 
 {% set prettier_dependencies_content %}
-- prettier@2.6.0
-- prettier-plugin-tailwindcss@0.1.12
-- typescript@4.6.2
+{{ super() }}
+          - prettier-plugin-tailwindcss@0.1.12
+          - typescript@4.6.2
 {%- endset %}
-{% set prettier_dependencies_content = prettier_dependencies_content|indent(10, true)|safe %}
+{% set prettier_dependencies_content = prettier_dependencies_content|safe %}
 
 {% block prettier_dependencies %}
 {{ prettier_dependencies_content }}
