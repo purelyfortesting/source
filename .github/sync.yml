@@ -2,15 +2,9 @@ group:
   - repos: |
       purelyfortesting/dest
     files:
-      - text.txt
-      - source: templates/child.txt
-        dest: root.txt
-        template:
-          a:
-            b:
-              c: 'val'
-      - source: templates/child.txt
-        dest: templates/garbage.txt
+      - source: .pre-commit-config.yaml.jinja
+        dest: .pre-commit-config.yaml
         template: true
-      - source: templates/
+      - source: .pre-commit-config.frontend.yaml.jinja
+        dest: .pre-commit-config.frontend.yaml
         template: true
