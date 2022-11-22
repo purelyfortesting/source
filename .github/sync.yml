@@ -11,4 +11,5 @@ group:
     files:
       - source: .pre-commit-config.frontend.yaml.jinja
         dest: .pre-commit-config.frontend.yaml
-        template: true
+        template:
+          contains_python_code: false
